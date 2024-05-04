@@ -1,0 +1,66 @@
+### Get Events
+GET http://localhost:8080/events
+Authorization: <auth token>
+
+### Get Event
+GET http://localhost:8080/events/1
+Authorization: <auth token>
+
+### Create Event
+POST http://localhost:8080/events
+Content-Type: application/json
+Authorization: <auth token>
+
+{
+    "name": "Test event",
+    "description": "A test description",
+    "location": "A test location",
+    "datetime": "2025-01-01T15:30:00.000Z"
+}
+
+### Update Event
+PUT http://localhost:8080/events/1
+Content-Type: application/json
+Authorization: <auth token>
+
+{
+    "name": "Updated Test event",
+    "description": "Updated test description",
+    "location": "Updated test location",
+    "datetime": "2025-01-01T15:30:00.000Z"
+}
+
+### Delete event
+DELETE http://localhost:8080/events/1
+Authorization: <auth token>
+
+### Register For Event
+POST http://localhost:8080/events/1/register
+Authorization: 
+
+###  Get Event Registrations
+GET http://localhost:8080/events/registrations
+Authorization: <auth token>
+
+### Unregister For Event
+DELETE http://localhost:8080/events/1/register
+Authorization: <auth token>
+
+### Signup 
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+    "email": "john.doe@example.com",
+    "password": "password"
+}
+
+
+### Login
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@example.com",
+    "password": "password"
+}
